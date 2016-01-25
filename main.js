@@ -1,4 +1,4 @@
-// TODO: Need to add overs timline
+// TODO: Need to add overs timeline
 var finalScore = new Array();
 var finalWicket = 0;
 Array.prototype.sum = function() {
