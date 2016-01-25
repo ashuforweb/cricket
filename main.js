@@ -40,7 +40,7 @@ function fnRemoveLast() {
     document.getElementById('notification').innerHTML = " Nothing to be Removed!!!";
   }
   document.getElementById('notification').style.visibility = "visible";
-
+// TODO: Need to move this functionality of hiding notification using CSS rather than JavaScript
   setTimeout(function() {
     document.getElementById('notification').style.visibility = "hidden";
   }, 2500);
