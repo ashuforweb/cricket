@@ -34,7 +34,7 @@ function fnRemoveLast() {
   if (finalScore.length > 0) {
     document.getElementById('notification').innerHTML = finalScore[finalScore.length - 1] + " Runs Removed!!!";
     finalScore.pop();
-    document.getElementById('final').innerHTML = finalScore.sum();
+    document.getElementById('final').innerHTML = finalScore.sum()+"/"+finalWicket;
   } else {
     document.getElementById('notification').innerHTML = " Nothing to be Removed!!!";
   }
