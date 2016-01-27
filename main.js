@@ -1,4 +1,7 @@
+// Firebase var
+var myDataRef = new Firebase('https://ashcricket.firebaseio.com/');
 // TODO: Need to add overs timeline
+
 var finalScore = new Array();
 var finalWicket = 0;
 Array.prototype.sum = function() {
@@ -17,7 +20,7 @@ function fnWicket() {
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
     document.getElementById('notification').innerHTML = "And this is the Wicket!!!";
     document.getElementById('notification').style.visibility = "visible";
-
+    myDataRef.push({score:document.getElementById('final').innerHTML});
     setTimeout(function() {
       document.getElementById('notification').style.visibility = "hidden";
     }, 2500);
@@ -25,7 +28,7 @@ function fnWicket() {
 
 }
 // TODO: following lines are for firebase Experiment do remove them if this doesn't work
-var myDataRef = new Firebase('https://ashcricket.firebaseio.com/');
+
 // Firebase code ENDS here
 function fnAddFinal(a) {
   finalScore.push(a);
