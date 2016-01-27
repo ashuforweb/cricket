@@ -35,7 +35,7 @@ function fnAddFinal(a) {
   document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
   // TODO: following lines are for firebase Experiment do remove them if this doesn't work
 
-  myDataRef.push({score:document.getElementById('final').innerHTML});
+  myDataRef.set({score:document.getElementById('final').innerHTML});
   // Firebase code ENDS here
 }
 
