@@ -24,11 +24,16 @@ function fnWicket() {
   }
 
 }
-
-
+// TODO: following lines are for firebase Experiment do remove them if this doesn't work
+var myDataRef = new Firebase('https://ashcricket.firebaseio.com/');
+// Firebase code ENDS here
 function fnAddFinal(a) {
   finalScore.push(a);
   document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
+  // TODO: following lines are for firebase Experiment do remove them if this doesn't work
+
+  myDataRef.push({score:document.getElementById('final').innerHTML});
+  // Firebase code ENDS here
 }
 
 function fnRemoveLast() {
@@ -36,6 +41,8 @@ function fnRemoveLast() {
     document.getElementById('notification').innerHTML = finalScore[finalScore.length - 1] + " Runs Removed!!!";
     finalScore.pop();
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
+    myDataRef.push({score:document.getElementById('final').innerHTML});
+    // Firebase code ENDS here
   } else {
     document.getElementById('notification').innerHTML = " Nothing to be Removed!!!";
   }
