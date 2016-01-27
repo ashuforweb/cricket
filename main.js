@@ -20,7 +20,7 @@ function fnWicket() {
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
     document.getElementById('notification').innerHTML = "And this is the Wicket!!!";
     document.getElementById('notification').style.visibility = "visible";
-    myDataRef.push({score:document.getElementById('final').innerHTML});
+  myDataRef.set({score:document.getElementById('final').innerHTML});
     setTimeout(function() {
       document.getElementById('notification').style.visibility = "hidden";
     }, 2500);
@@ -44,7 +44,7 @@ function fnRemoveLast() {
     document.getElementById('notification').innerHTML = finalScore[finalScore.length - 1] + " Runs Removed!!!";
     finalScore.pop();
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
-    myDataRef.push({score:document.getElementById('final').innerHTML});
+    myDataRef.set({score:document.getElementById('final').innerHTML});
     // Firebase code ENDS here
   } else {
     document.getElementById('notification').innerHTML = " Nothing to be Removed!!!";
