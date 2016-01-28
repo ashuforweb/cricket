@@ -20,7 +20,9 @@ function fnWicket() {
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
     document.getElementById('notification').innerHTML = "And this is the Wicket!!!";
     document.getElementById('notification').style.visibility = "visible";
-  myDataRef.set({score:document.getElementById('final').innerHTML});
+    myDataRef.set({
+      score: document.getElementById('final').innerHTML
+    });
     setTimeout(function() {
       document.getElementById('notification').style.visibility = "hidden";
     }, 2500);
@@ -35,7 +37,9 @@ function fnAddFinal(a) {
   document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
   // TODO: following lines are for firebase Experiment do remove them if this doesn't work
 
-  myDataRef.set({score:document.getElementById('final').innerHTML});
+  myDataRef.set({
+    score: document.getElementById('final').innerHTML
+  });
   // Firebase code ENDS here
 }
 
@@ -44,13 +48,15 @@ function fnRemoveLast() {
     document.getElementById('notification').innerHTML = finalScore[finalScore.length - 1] + " Runs Removed!!!";
     finalScore.pop();
     document.getElementById('final').innerHTML = finalScore.sum() + "/" + finalWicket;
-    myDataRef.set({score:document.getElementById('final').innerHTML});
+    myDataRef.set({
+      score: document.getElementById('final').innerHTML
+    });
     // Firebase code ENDS here
   } else {
     document.getElementById('notification').innerHTML = " Nothing to be Removed!!!";
   }
   document.getElementById('notification').style.visibility = "visible";
-// TODO: Need to move this functionality of hiding notification using CSS rather than JavaScript
+  // TODO: Need to move this functionality of hiding notification using CSS rather than JavaScript
   setTimeout(function() {
     document.getElementById('notification').style.visibility = "hidden";
   }, 2500);
